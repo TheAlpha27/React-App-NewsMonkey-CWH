@@ -1,4 +1,4 @@
-.news-container, .news-card-container{
+.news-card-container{
     justify-content: center;
     align-items: center;
     display: flex;

@@ -273,14 +273,14 @@ export class News extends Component {
     }
     render() {
         return (
-            <div className="container py-3">
+            <div className="container my-5 py-3">
                 <div className="row news-container">
                     <div className="col-12">
                         <h1 style={{ textAlign: 'center' }}>News Headlines!</h1>
                     </div>
                     {this.state.articles.map((element) => {
-                        return <div className="col-md-4 news-card-container">
-                            <NewsItem key={element.url} title={element.title} description={element.description} ImageURL={element.urlToImage}/>
+                        return <div className="col-md-4 news-card-container" key={element.url}>
+                            <NewsItem  title={element.title} description={element.description} ImageURL={element.urlToImage} NewsURL={element.url}/>
                         </div>
                     })}
                 </div>

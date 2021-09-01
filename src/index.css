@@ -1,8 +1,11 @@
-.news-card-container{
+.news-card-container, .news-container{
     justify-content: center;
-    align-items: center;
+    align-items: top;
     display: flex;
 }
-.top{
-    margin-top: 0px;
+.news-card-container{
+    height: 27em;
+}
+.news-img{
+    height: 10em;
 }

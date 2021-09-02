@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class NewsItem extends Component {
     render() {
-        let { title, description, ImageURL, NewsURL, DatePub} = this.props;
+        let { title, description, ImageURL, NewsURL, DatePub } = this.props;
         return (
             <div className="card my-3 mx-3" style={{ width: '18rem' }}>
                 <img className="news-img" src={ImageURL} alt="..." />
@@ -12,8 +12,8 @@ export default class NewsItem extends Component {
                 </div>
                 <div className="dateDiv">
                     <a href={NewsURL} target="_blank" className="btn btn-sm btn-dark">Read More</a>
-                    <div>Updated: {DatePub}</div>
-                    </div>
+                    <div><strong>Updated:</strong> {DatePub}</div>
+                </div>
             </div>
         )
     }

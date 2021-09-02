@@ -9,3 +9,8 @@
 .news-img{
     height: 10em;
 }
+.dateDiv{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}

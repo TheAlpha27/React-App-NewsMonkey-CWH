@@ -4,10 +4,10 @@
     display: flex;
 }
 .news-card-container{
-    height: 29em;
+    height: 33em;
 }
 .news-img{
-    height: 10em;
+    max-height: 16rem;
 }
 .dateDiv{
     display: flex;

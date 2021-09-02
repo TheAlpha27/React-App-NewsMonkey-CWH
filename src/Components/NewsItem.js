@@ -4,7 +4,7 @@ export default class NewsItem extends Component {
     render() {
         let { title, description, ImageURL, NewsURL, DatePub } = this.props;
         return (
-            <div className="card my-3 mx-3" style={{ width: '18rem' }}>
+            <div className="card my-3 mx-3">
                 <img className="news-img" src={ImageURL} alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{title}...</h5>

@@ -11,7 +11,7 @@ export class News extends Component {
         }
     }
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=1&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=1&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -21,7 +21,7 @@ export class News extends Component {
         });
     }
     handleNextClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -33,7 +33,7 @@ export class News extends Component {
         });
     }
     handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -48,7 +48,7 @@ export class News extends Component {
         return (
             <div className="container my-5 py-3">
                 <div className="row news-container">
-                    <div className="col-12">
+                    <div className="col-12 mt-2">
                         <h1 style={{ textAlign: 'center' }}>News Headlines!</h1>
                     </div>
                     <div className="text-center">

@@ -16,28 +16,28 @@ export default class App extends Component {
         <Switch>
           {/* we will have to use 'exact' keyword for path and pass a unique key in each news component to make routing work */}
           <Route exact path="/">
-            <News key="home"  pageSize={9} country='in' category='general' />
+            <News key="home"  pageSize={12} country='in' category='general' />
           </Route>
           <Route exact path="/business">
-            <News key="business"  pageSize={9} country='in' category='business' />
+            <News key="business"  pageSize={12} country='in' category='business' />
           </Route>
           <Route exact path="/entertainment">
-            <News key="entertainment"  pageSize={9} country='in' category='entertainment' />
+            <News key="entertainment"  pageSize={12} country='in' category='entertainment' />
           </Route>
           <Route exact path="/general">
-            <News key="general"  pageSize={9} country='in' category='general' />
+            <News key="general"  pageSize={12} country='in' category='general' />
           </Route>
           <Route exact path="/health">
-            <News key="health"  pageSize={9} country='in' category='health' />
+            <News key="health"  pageSize={12} country='in' category='health' />
           </Route>
           <Route exact path="/science">
-            <News key="science"  pageSize={9} country='in' category='science' />
+            <News key="science"  pageSize={12} country='in' category='science' />
           </Route>
           <Route exact path="/sports">
-            <News key="sports"  pageSize={9} country='in' category='sports' />
+            <News key="sports"  pageSize={12} country='in' category='sports' />
           </Route>
           <Route exact path="/technology">
-            <News key="technology" pageSize={9} country='in' category='technology' />
+            <News key="technology" pageSize={12} country='in' category='technology' />
           </Route>
         </Switch>
       </Router>

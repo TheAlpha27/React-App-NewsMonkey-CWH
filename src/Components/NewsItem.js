@@ -11,7 +11,7 @@ export default class NewsItem extends Component {
                     <p className="card-text">{description}...</p>
                 </div>
                 <div className="dateDiv">
-                    <a href={NewsURL} target="_blank" className="btn btn-sm btn-dark">Read More</a>
+                    <a href={NewsURL} rel="noreferrer" target="_blank" className="btn btn-sm btn-dark">Read More</a>
                     <div><strong>Updated:</strong> {DatePub}</div>
                 </div>
             </div>

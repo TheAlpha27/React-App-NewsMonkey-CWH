@@ -10,8 +10,9 @@ export class News extends Component {
             page: 1
         }
     }
-    async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=1&pageSize=${this.props.pageSize}`;
+
+    async updateNews() {
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -19,30 +20,18 @@ export class News extends Component {
             articles: parsedData.articles,
             loading: false
         });
+    }
+    // componentDidMount() function allow to execute the react code in it when the component is added to the DOM
+    async componentDidMount() {
+        this.updateNews();
     }
     handleNextClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-        this.setState({ loading: true });
-        let data = await fetch(url);
-        let parsedData = await data.json();
-        this.setState({
-            page: this.state.page + 1,
-            articles: parsedData.articles,
-            totalArticles: parsedData.totalResults,
-            loading: false
-        });
+        this.setState({ page: this.state.page + 1 });
+        this.updateNews();
     }
     handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
-        this.setState({ loading: true });
-        let data = await fetch(url);
-        let parsedData = await data.json();
-        this.setState({
-            page: this.state.page - 1,
-            articles: parsedData.articles,
-            totalArticles: parsedData.totalResults,
-            loading: false
-        });
+        this.setState({ page: this.state.page - 1 });
+        this.updateNews();
     }
     render() {
         return (
@@ -57,7 +46,7 @@ export class News extends Component {
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-4 news-card-container" key={element.url}>
                             {/* if element is null then we cannot use slice so we have to use ternary operator */}
-                            <NewsItem title={element.title} description={element.description ? element.description.slice(0, 100) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt.slice(0, 10)} />
+                            <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 100) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt} />
                         </div>
                     })}
                     <hr />

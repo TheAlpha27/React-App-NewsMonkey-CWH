@@ -35,7 +35,7 @@ export class News extends Component {
     }
     render() {
         return (
-            <div className="container my-5 py-3">
+            <div className="container-lg container-fluid my-5 py-3"> 
                 <div className="row news-container">
                     <div className="col-12 mt-2">
                         <h1 style={{ textAlign: 'center' }}>News Headlines!</h1>

@@ -58,7 +58,7 @@ export class News extends Component {
     }
     render() {
         return (
-            <div className="container-lg container-fluid my-5 py-3">
+            <div className="container-lg container-fluid my-2 py-3">
                 <div className="row news-container">
                     <div className="col-12 mt-2">
                         <h1 style={{ textAlign: 'center' }}>News Headlines!- {this.capitalize(this.props.category)}</h1>

@@ -13,16 +13,21 @@ export class News extends Component {
         }
     }
 
-    async updateNews() {
+    async updateNews(props) {
+        this.props.setProgress(10);
         const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c45b6f940fd4d75b089ac668e6c62f4&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
+        this.props.setProgress(30);
         let data = await fetch(url);
+        this.props.setProgress(40);
         let parsedData = await data.json();
+        this.props.setProgress(60);
         this.setState({
             articles: parsedData.articles,
             loading: false,
             totalResults: parsedData.totalResults
         });
+        this.props.setProgress(100);
     }
     // componentDidMount() function allow to execute the react code in it when the component is added to the DOM
     async componentDidMount() {
@@ -67,7 +72,7 @@ export class News extends Component {
                         {this.state.articles.map((element) => {
                             return <div className="col-lg-4 col-md-6 news-card-container" key={element.url}>
                                 {/* if element is null then we cannot use slice so we have to use ternary operator */}
-                                <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 100) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt} />
+                                <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 200) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt} />
                             </div>
                         })}
                         </div>

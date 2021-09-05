@@ -72,7 +72,7 @@ export class News extends Component {
                         {this.state.articles.map((element) => {
                             return <div className="col-lg-4 col-md-6 news-card-container" key={element.url}>
                                 {/* if element is null then we cannot use slice so we have to use ternary operator */}
-                                <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 200) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt} />
+                                <NewsItem title={element.title} description={element.description ? element.description.slice(0, 100) : ""} ImageURL={element.urlToImage ? element.urlToImage : 'https://cdn.pixabay.com/photo/2015/02/15/09/33/news-636978_960_720.jpg'} NewsURL={element.url} DatePub={element.publishedAt} />
                             </div>
                         })}
                         </div>

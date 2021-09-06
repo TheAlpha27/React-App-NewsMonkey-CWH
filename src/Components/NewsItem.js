@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export default function NewsItem(props) {
         let { title, description, ImageURL, NewsURL, DatePub } = props;

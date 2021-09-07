@@ -4,7 +4,7 @@ import NewsItem from './NewsItem';
 import Spinner from './Spinner';
 export default function News(props) {
     const [articles, setArticles] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [totalResults, setTotalResults] = useState(0);
 

@@ -35,8 +35,9 @@ export default function News(props) {
     //     updateNews();
     // }
     const fetchMoreData = async () => {
+        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+        // solved the bug of concat articles by adding page+1 in the URL itself as the setPage is asynchronous so the URL fetches the same articles as the page was updated after some time. We update the page in URL and then use setPage to update the page state.
         setPage(page + 1);
-        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true);
         let data = await fetch(url);
         let parsedData = await data.json();

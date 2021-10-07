@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/React-App-NewsMonkey-CWH/static/css/main.cc762c67.chunk.css",
+    "main.js": "/React-App-NewsMonkey-CWH/static/js/main.ec1e2a9c.chunk.js",
+    "main.js.map": "/React-App-NewsMonkey-CWH/static/js/main.ec1e2a9c.chunk.js.map",
+    "runtime-main.js": "/React-App-NewsMonkey-CWH/static/js/runtime-main.0466f22a.js",
+    "runtime-main.js.map": "/React-App-NewsMonkey-CWH/static/js/runtime-main.0466f22a.js.map",
+    "static/js/2.3ee6ae3e.chunk.js": "/React-App-NewsMonkey-CWH/static/js/2.3ee6ae3e.chunk.js",
+    "static/js/2.3ee6ae3e.chunk.js.map": "/React-App-NewsMonkey-CWH/static/js/2.3ee6ae3e.chunk.js.map",
+    "static/js/3.26b8dd6f.chunk.js": "/React-App-NewsMonkey-CWH/static/js/3.26b8dd6f.chunk.js",
+    "static/js/3.26b8dd6f.chunk.js.map": "/React-App-NewsMonkey-CWH/static/js/3.26b8dd6f.chunk.js.map",
+    "index.html": "/React-App-NewsMonkey-CWH/index.html",
+    "static/css/main.cc762c67.chunk.css.map": "/React-App-NewsMonkey-CWH/static/css/main.cc762c67.chunk.css.map",
+    "static/js/2.3ee6ae3e.chunk.js.LICENSE.txt": "/React-App-NewsMonkey-CWH/static/js/2.3ee6ae3e.chunk.js.LICENSE.txt",
+    "static/media/spinner.f5230fe0.gif": "/React-App-NewsMonkey-CWH/static/media/spinner.f5230fe0.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0466f22a.js",
+    "static/js/2.3ee6ae3e.chunk.js",
+    "static/css/main.cc762c67.chunk.css",
+    "static/js/main.ec1e2a9c.chunk.js"
+  ]
+}
